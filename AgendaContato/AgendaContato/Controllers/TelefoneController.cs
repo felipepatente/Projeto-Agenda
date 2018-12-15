@@ -22,8 +22,11 @@ namespace AgendaContato.Controllers
         [HttpPost]
         public ActionResult Adiciona(Telefone telefone)
         {
-            TelefoneDAO dao = new TelefoneDAO();
-            dao.Adiciona(telefone);
+            if (ModelState.IsValid)
+            {
+                TelefoneDAO dao = new TelefoneDAO();
+                dao.Adiciona(telefone);
+            }
 
             return RedirectToAction("Menu", "Telefone");
         }

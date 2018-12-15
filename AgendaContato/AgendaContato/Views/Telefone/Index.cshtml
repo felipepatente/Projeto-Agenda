@@ -2,12 +2,12 @@
     
     <p>
         <label for="numero">Número:</label>
-        <input id="numero" name="telefone.Numero" class="form-control" />
+        <input type="text" id="numero" name="telefone.Numero" required/>
     </p>
     
     <p>
         <label for="nome">Nome:</label>
-        <select id="nome" name="telefone.NomeId" class="form-control">
+        <select id="nome" name="telefone.NomeId" class="form-control" required>
 
             @foreach (var nome in ViewBag.Nomes)
             {

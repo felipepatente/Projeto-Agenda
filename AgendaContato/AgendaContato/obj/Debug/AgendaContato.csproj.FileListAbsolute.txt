@@ -50,3 +50,4 @@ c:\users\felipe\documents\visual studio 2015\Projects\AgendaContato\AgendaContat
 c:\users\felipe\documents\visual studio 2015\Projects\AgendaContato\AgendaContato\obj\Debug\AgendaContato.pdb
 c:\users\felipe\documents\visual studio 2015\Projects\AgendaContato\AgendaContato\obj\Debug\AgendaContato.Migrations.TabelasIniciais.resources
 c:\users\felipe\documents\visual studio 2015\Projects\AgendaContato\AgendaContato\obj\Debug\AgendaContato.csproj.GenerateResource.Cache
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\AgendaContato\AgendaContato\obj\Debug\AgendaContato.Migrations.FazendoAtualizacao.resources

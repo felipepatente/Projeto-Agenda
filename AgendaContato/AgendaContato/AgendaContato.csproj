@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201812141246113_TabelasIniciais.Designer.cs">
       <DependentUpon>201812141246113_TabelasIniciais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812141930257_FazendoAtualizacao.cs" />
+    <Compile Include="Migrations\201812141930257_FazendoAtualizacao.Designer.cs">
+      <DependentUpon>201812141930257_FazendoAtualizacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Nome.cs" />
@@ -186,6 +190,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812141246113_TabelasIniciais.resx">
       <DependentUpon>201812141246113_TabelasIniciais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812141930257_FazendoAtualizacao.resx">
+      <DependentUpon>201812141930257_FazendoAtualizacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

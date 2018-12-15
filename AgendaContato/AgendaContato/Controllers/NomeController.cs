@@ -19,9 +19,12 @@ namespace AgendaContato.Controllers
         [HttpPost]
         public ActionResult Adiciona(Nome nome)
         {
-            NomeDAO dao = new NomeDAO();
-            dao.Adiciona(nome);
-
+            if (ModelState.IsValid)
+            {
+                NomeDAO dao = new NomeDAO();
+                dao.Adiciona(nome);                
+            }
+            
             return RedirectToAction("Menu", "Nome");
         }
 
@@ -35,6 +38,11 @@ namespace AgendaContato.Controllers
             NomeDAO dao = new NomeDAO();
             IList<Nome> nomes = dao.Lista();
             ViewBag.Nomes = nomes;
+            return View();
+        }
+        
+        public ActionResult CampoInvalido()
+        {
             return View();
         }
 
