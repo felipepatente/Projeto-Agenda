@@ -1,13 +1,14 @@
 ﻿@model IList<AgendaContato.Models.Nome>
 
 <ul class="nav nav-pills pull-right">
-    <li>@Html.ActionLink("Voltar", "Menu", "Email")</li>
+    <li>@Html.ActionLink("Voltar", "Menu", "Nome")</li>
 </ul>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nome</th>
+            <th></th>
             <th></th>            
         </tr>
     </thead>
@@ -17,7 +18,8 @@
             <tr>
                 <td>@nomes.Id</td>
                 <td>@nomes.NomeContato</td>    
-                <td>@Html.RouteLink("Excluir", "ExcluirNome", new { id = nomes.Id })</td>                                
+                <td>@Html.RouteLink("Excluir", "ExcluirNome", new { id = nomes.Id })</td>
+                <td> <a href="/Nome/AlterarNome/@nomes.Id">Alterar</a></td>                                
             </tr>
         }
     </tbody>

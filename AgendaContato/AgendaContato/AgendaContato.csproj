@@ -177,6 +177,9 @@
     <Content Include="Views\Email\ListarEmail.cshtml" />
     <Content Include="Views\Nome\Menu.cshtml" />
     <Content Include="Views\Nome\Listar.cshtml" />
+    <Content Include="Views\Email\AlterarEmail.cshtml" />
+    <Content Include="Views\Telefone\AlterarTelefone.cshtml" />
+    <Content Include="Views\Nome\AlterarNome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

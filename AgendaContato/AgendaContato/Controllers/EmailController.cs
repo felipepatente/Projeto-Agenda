@@ -24,7 +24,7 @@ namespace AgendaContato.Controllers
         {
             EmailDAO dao = new EmailDAO();
             dao.Adiciona(email);
-
+            
             return RedirectToAction("Menu", "Email");
         }
 
@@ -58,7 +58,38 @@ namespace AgendaContato.Controllers
                 }
             }
 
-            return RedirectToAction("Menu", "Telefone");
+            return RedirectToAction("Menu", "Email");
+        }
+        
+        public ActionResult AlterarEmail(int id)
+        {
+            using (var contexto = new AgendaContext())
+            {
+                EmailDAO dao = new EmailDAO();
+                ViewBag.Email = dao.BuscaPorId(id);
+
+                NomeDAO nomeDao = new NomeDAO();
+                IList<Nome> nomes = nomeDao.Lista();
+                ViewBag.Nomes = nomes;                
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GravarAlteracao(Email email)
+        {
+            EmailDAO dao = new EmailDAO();
+            Email novoEmail = dao.BuscaPorId(email.Id);
+
+            novoEmail.NomeContato = email.NomeContato;
+            novoEmail.NomeId = email.NomeId;
+            novoEmail.EmailContato = email.EmailContato;
+
+            dao.Atualiza(novoEmail);
+            
+            return RedirectToAction("Menu", "Email");
+            
         }
     }
 }

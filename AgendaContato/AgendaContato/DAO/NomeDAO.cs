@@ -31,6 +31,15 @@ namespace AgendaContato.DAO
             {
                 return contexto.Nomes.Find(id);
             }
-        }        
+        }
+
+        public void Atualiza(Nome nome)
+        {
+            using (var contexto = new AgendaContext())
+            {
+                contexto.Entry(nome).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();                
+            }
+        }
     }
 }

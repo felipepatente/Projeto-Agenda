@@ -32,5 +32,14 @@ namespace AgendaContato.DAO
                 return contexto.Telefones.Find(id);
             }
         }
+
+        public void Atualiza(Telefone telefone)
+        {
+            using (var contexto = new AgendaContext())
+            {
+                contexto.Entry(telefone).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();
+            }
+        }
     }
 }

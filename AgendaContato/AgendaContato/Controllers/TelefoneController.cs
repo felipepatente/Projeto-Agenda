@@ -63,5 +63,36 @@ namespace AgendaContato.Controllers
 
             return RedirectToAction("Menu", "Telefone");
         }
+
+        public ActionResult AlterarTelefone(int id)
+        {
+            using (var contexto = new AgendaContext())
+            {
+                TelefoneDAO dao = new TelefoneDAO();
+                ViewBag.Telefone = dao.BuscaPorId(id);
+
+                NomeDAO nomeDao = new NomeDAO();
+                IList<Nome> nomes = nomeDao.Lista();
+                ViewBag.Nomes = nomes;
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GravarAlteracao(Telefone telefone)
+        {
+            TelefoneDAO dao = new TelefoneDAO();
+            Telefone novoTelefone = dao.BuscaPorId(telefone.Id);
+
+            novoTelefone.NomeContato = telefone.NomeContato;
+            novoTelefone.NomeId = telefone.NomeId;
+            novoTelefone.Numero = telefone.Numero;
+
+            dao.Atualiza(novoTelefone);
+
+            return RedirectToAction("Menu", "Telefone");
+
+        }        
     }
 }

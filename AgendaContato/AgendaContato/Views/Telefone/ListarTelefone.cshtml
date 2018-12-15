@@ -10,6 +10,7 @@
             <th>Nome</th>
             <th>Número</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
                 <td>@telefone.NomeContato.NomeContato</td>
                 <td>@telefone.Numero</td>
                 <td>@Html.RouteLink("Excluir", "ExcluirTelefone", new { id = telefone.Id })</td>
+                <td> <a href="/Telefone/AlterarTelefone/@telefone.Id">Alterar</a></td>
             </tr>
         }
     </tbody>

@@ -10,6 +10,7 @@
             <th>Nome</th>
             <th>E-mail</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,8 +20,8 @@
                 <td>@email.Id</td>
                 <td>@email.NomeContato.NomeContato</td>
                 <td>@email.EmailContato</td>
-                <td>@Html.RouteLink("Excluir", "ExcluirEmail", new { id = email.Id })</td>
-
+                <td>@Html.RouteLink("Excluir", "ExcluirEmail", new { id = email.Id })</td>                
+                <td> <a href="/Email/AlterarEmail/@email.Id">Alterar</a></td>
             </tr>
         }
     </tbody>

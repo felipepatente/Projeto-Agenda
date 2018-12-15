@@ -1,0 +1,14 @@
+﻿<form action="/Nome/GravarAlteracao" method="post">
+
+    <p>
+        <label for="id">ID:</label>
+        <input id="id" readonly name="nome.Id" value="@ViewBag.Nome.Id" class="form-control" required />
+    </p>
+
+    <p>
+        <label for="nome">Nome:</label>
+        <input id="nome" name="nome.NomeContato" value="@ViewBag.Nome.NomeContato" class="form-control" required />
+    </p>
+
+    <input type="submit" value="Cadastrar" class="btn btn-outline-secondary" />
+</form>

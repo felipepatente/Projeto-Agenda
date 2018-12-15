@@ -1,0 +1,26 @@
+﻿<form action="/Email/GravarAlteracao" method="post">
+
+    <p>
+        <label for="id">ID:</label>
+        <input id="id" readonly name="email.Id" value="@ViewBag.Email.Id" class="form-control" required />
+    </p>
+
+    <p>
+        <label for="email">E-mail:</label>
+        <input id="email" type="email" name="email.EmailContato" value="@ViewBag.Email.EmailContato" class="form-control" required />
+    </p>
+
+    <p>
+        <label for="nome">Nome:</label>
+        <select id="nome" name="email.NomeId" class="form-control" required>
+
+            @foreach (var nome in ViewBag.Nomes)
+            {
+                <option value="@nome.Id" selected="@nome.Id.Equals(ViewBag.Email.NomeId)">@nome.NomeContato</option>
+            }
+
+        </select>
+    </p>
+
+    <input type="submit" value="Alterar" class="btn btn-outline-secondary" />
+</form>

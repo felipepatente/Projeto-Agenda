@@ -65,5 +65,28 @@ namespace AgendaContato.Controllers
 
             return RedirectToAction("Menu", "Nome");
         }
+
+        public ActionResult AlterarNome(int id)
+        {
+            using (var contexto = new AgendaContext())
+            {
+                NomeDAO dao = new NomeDAO();
+                ViewBag.Nome = dao.BuscaPorId(id);                
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GravarAlteracao(Nome nome)
+        {
+            NomeDAO dao = new NomeDAO();
+            Nome novoNome = dao.BuscaPorId(nome.Id);
+            novoNome.NomeContato = nome.NomeContato;            
+            dao.Atualiza(novoNome);
+
+            return RedirectToAction("Menu", "Nome");
+        }
+        
     }
 }
