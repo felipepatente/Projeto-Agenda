@@ -22,7 +22,21 @@ namespace AgendaContato.Controllers
             NomeDAO dao = new NomeDAO();
             dao.Adiciona(nome);
 
-            return RedirectToAction("Index", "Nome");
+            return RedirectToAction("Menu", "Nome");
         }
+
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult Listar()
+        {
+            NomeDAO dao = new NomeDAO();
+            IList<Nome> nomes = dao.Lista();
+            ViewBag.Nomes = nomes;
+            return View();
+        }
+
     }
 }

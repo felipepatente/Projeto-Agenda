@@ -21,7 +21,7 @@ namespace AgendaContato.DAO
         {
             using (var contexto = new AgendaContext())
             {
-                return contexto.Telefones.ToList();
+                return contexto.Telefones.Include("NomeContato").ToList();
             }
         }
 

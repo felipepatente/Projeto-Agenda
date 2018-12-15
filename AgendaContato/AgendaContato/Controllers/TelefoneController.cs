@@ -25,7 +25,20 @@ namespace AgendaContato.Controllers
             TelefoneDAO dao = new TelefoneDAO();
             dao.Adiciona(telefone);
 
-            return RedirectToAction("Index", "Telefone");
+            return RedirectToAction("Menu", "Telefone");
+        }
+
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult Listar()
+        {
+            TelefoneDAO dao = new TelefoneDAO();
+            IList<Telefone> telefones = dao.Lista();
+            ViewBag.Telefones = telefones;
+            return View();
         }
     }
 }

@@ -25,7 +25,20 @@ namespace AgendaContato.Controllers
             EmailDAO dao = new EmailDAO();
             dao.Adiciona(email);
 
-            return RedirectToAction("Index", "Email");
+            return RedirectToAction("Menu", "Email");
+        }
+
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult Listar()
+        {
+            EmailDAO dao = new EmailDAO();
+            IList<Email> emails = dao.Lista();
+            ViewBag.Emails = emails;
+            return View();
         }
     }
 }

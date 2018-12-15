@@ -167,6 +167,12 @@
     <Content Include="Views\Nome\Index.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Telefone\Index.cshtml" />
+    <Content Include="Views\Telefone\Menu.cshtml" />
+    <Content Include="Views\Telefone\Listar.cshtml" />
+    <Content Include="Views\Email\Menu.cshtml" />
+    <Content Include="Views\Email\Listar.cshtml" />
+    <Content Include="Views\Nome\Menu.cshtml" />
+    <Content Include="Views\Nome\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
