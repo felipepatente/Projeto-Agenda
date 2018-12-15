@@ -140,6 +140,7 @@
     <Compile Include="Controllers\TelefoneController.cs" />
     <Compile Include="DAO\AgendaContext.cs" />
     <Compile Include="DAO\EmailDAO.cs" />
+    <Compile Include="DAO\HomeDAO.cs" />
     <Compile Include="DAO\NomeDAO.cs" />
     <Compile Include="DAO\TelefoneDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +181,8 @@
     <Content Include="Views\Email\AlterarEmail.cshtml" />
     <Content Include="Views\Telefone\AlterarTelefone.cshtml" />
     <Content Include="Views\Nome\AlterarNome.cshtml" />
+    <Content Include="Views\Home\FiltrarDados.cshtml" />
+    <Content Include="Views\Home\Listar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,9 +1,10 @@
-﻿<form action="/Nome/Adiciona" method="post">
-
+﻿<ul class="nav nav-pills pull-right">
+    <li>@Html.ActionLink("Voltar", "Menu", "Nome")</li>
+</ul>
+<form action="/Nome/Adiciona" method="post">
     <p>
         <label for="nome">Nome:</label>
         <input id="nome" name="nome.NomeContato" class="form-control" required/>
     </p>
-
     <input type="submit" value="Cadastrar" class="btn btn-outline-secondary" />
 </form>

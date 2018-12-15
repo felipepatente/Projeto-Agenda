@@ -1,0 +1,22 @@
+﻿@model IList<AgendaContato.Models.Nome>
+
+<ul class="nav nav-pills pull-right">
+    <li>@Html.ActionLink("Voltar", "Index", "Home")</li>
+</ul>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var nomes in Model)
+        {
+            <tr>
+                <td>@nomes.Id</td>
+                <td>@nomes.NomeContato</td>                
+            </tr>
+        }
+    </tbody>
+</table>

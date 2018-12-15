@@ -1,0 +1,14 @@
+﻿<ul class="nav nav-pills pull-right">
+    <li>@Html.ActionLink("Filtrar", "FiltrarDados", "Home")</li>
+    <!--<li>@Html.ActionLink("Voltar", "Index", "Home")</li>-->
+</ul>
+
+<form action="/Home/Listar" method="post">
+
+    <p>
+        <label for="nome">Nome:</label>
+        <input id="nome" name="nome" class="form-control" required />
+    </p>
+
+    <input type="submit" value="Filtrar" class="btn btn-outline-secondary" />
+</form>

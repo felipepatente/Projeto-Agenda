@@ -1,10 +1,11 @@
-﻿<form action="/Telefone/Adiciona" method="post">
-    
+﻿<ul class="nav nav-pills pull-right">
+    <li>@Html.ActionLink("Voltar", "Menu", "Telefone")</li>
+</ul>
+<form action="/Telefone/Adiciona" method="post">    
     <p>
         <label for="numero">Número:</label>
         <input type="text" id="numero" name="telefone.Numero" class="form-control" required/>
-    </p>
-    
+    </p>    
     <p>
         <label for="nome">Nome:</label>
         <select id="nome" name="telefone.NomeId" class="form-control" required>
@@ -16,6 +17,5 @@
 
         </select>
     </p>
-
     <input type="submit" value="Cadastrar" class="btn btn-outline-secondary" />
 </form>
