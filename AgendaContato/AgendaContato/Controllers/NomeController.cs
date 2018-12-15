@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgendaContato.DAO;
+using AgendaContato.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,15 @@ namespace AgendaContato.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Adiciona(Nome nome)
+        {
+            NomeDAO dao = new NomeDAO();
+            dao.Adiciona(nome);
+
+            return RedirectToAction("Index", "Nome");
         }
     }
 }

@@ -1,1 +1,21 @@
-﻿<h1>Conteudo do Telefone</h1>
+﻿<form action="/Telefone/Adiciona" method="post">
+    
+    <p>
+        <label for="numero">Número:</label>
+        <input id="numero" name="telefone.Numero" class="form-control" />
+    </p>
+    
+    <p>
+        <label for="nome">Nome:</label>
+        <select id="nome" name="telefone.NomeId" class="form-control">
+
+            @foreach (var nome in ViewBag.Nomes)
+            {
+                <option value="@nome.Id">@nome.NomeContato</option>
+            }
+
+        </select>
+    </p>
+
+    <input type="submit" value="Cadastrar" class="btn btn-outline-secondary" />
+</form>

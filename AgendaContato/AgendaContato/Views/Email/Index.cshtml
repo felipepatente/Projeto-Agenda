@@ -1,1 +1,21 @@
-﻿<h1>Conteudo do E-mail</h1>
+﻿<form action="/Email/Adiciona" method="post">
+
+    <p>
+        <label for="email">E-mail:</label>
+        <input id="email" name="email.EmailContato" class="form-control" />
+    </p>
+
+    <p>
+        <label for="nome">Nome:</label>
+        <select id="nome" name="email.NomeId" class="form-control">
+
+            @foreach (var nome in ViewBag.Nomes)
+            {
+                <option value="@nome.Id">@nome.NomeContato</option>
+            }
+
+        </select>
+    </p>
+
+    <input type="submit" value="Cadastrar" class="btn btn-outline-secondary" />
+</form>
