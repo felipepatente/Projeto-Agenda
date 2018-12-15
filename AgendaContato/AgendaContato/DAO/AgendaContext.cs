@@ -14,6 +14,5 @@ namespace AgendaContato.DAO
         public DbSet<Nome> Nomes { get; set; }
 
         public DbSet<Telefone> Telefones { get; set; }
-        
     }
 }
