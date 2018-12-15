@@ -36,12 +36,32 @@ namespace AgendaContato.Controllers
             return View();
         }
 
-        public ActionResult Listar()
+        public ActionResult ListarTelefone()
         {
             TelefoneDAO dao = new TelefoneDAO();
-            IList<Telefone> telefones = dao.Lista();
-            ViewBag.Telefones = telefones;
-            return View();
+            IList<Telefone> telefones = dao.Lista();           
+            return View(telefones);
+        }
+
+        [Route("ListarTelefone/{id}", Name = "ExcluirTelefone")]
+        public ActionResult Excluir(int id = 0)
+        {
+            if (id != 0)
+            {
+                using (var contexto = new AgendaContext())
+                {
+                    var telefones = contexto.Telefones.Where(t => t.Id == id);
+
+                    foreach (Telefone item in telefones)
+                    {
+                        contexto.Telefones.Remove(item);
+                    }
+
+                    contexto.SaveChanges();
+                }
+            }
+
+            return RedirectToAction("Menu", "Telefone");
         }
     }
 }

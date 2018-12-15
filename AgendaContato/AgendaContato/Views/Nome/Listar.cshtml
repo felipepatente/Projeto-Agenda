@@ -1,4 +1,6 @@
-﻿<ul class="nav nav-pills pull-right">
+﻿@model IList<AgendaContato.Models.Nome>
+
+<ul class="nav nav-pills pull-right">
     <li>@Html.ActionLink("Voltar", "Menu", "Email")</li>
 </ul>
 <table class="table table-hover">
@@ -6,14 +8,16 @@
         <tr>
             <th>Id</th>
             <th>Nome</th>
+            <th></th>            
         </tr>
     </thead>
     <tbody>
-        @foreach (var nomes in ViewBag.Nomes)
+        @foreach (var nomes in Model)
         {
             <tr>
                 <td>@nomes.Id</td>
-                <td>@nomes.NomeContato</td>
+                <td>@nomes.NomeContato</td>    
+                <td>@Html.RouteLink("Excluir", "ExcluirNome", new { id = nomes.Id })</td>                                
             </tr>
         }
     </tbody>

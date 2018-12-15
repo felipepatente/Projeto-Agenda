@@ -33,12 +33,32 @@ namespace AgendaContato.Controllers
             return View();
         }
 
-        public ActionResult Listar()
+        public ActionResult ListarEmail()
         {
             EmailDAO dao = new EmailDAO();
-            IList<Email> emails = dao.Lista();
-            ViewBag.Emails = emails;
-            return View();
+            IList<Email> emails = dao.Lista();            
+            return View(emails);
+        }
+
+        [Route("ListarEmail/{id}", Name = "ExcluirEmail")]
+        public ActionResult Excluir(int id = 0)
+        {
+            if (id != 0)
+            {
+                using (var contexto = new AgendaContext())
+                {
+                    var emails = contexto.Emails.Where(n => n.Id == id);
+
+                    foreach (Email item in emails)
+                    {
+                        contexto.Emails.Remove(item);
+                    }
+
+                    contexto.SaveChanges();
+                }
+            }
+
+            return RedirectToAction("Menu", "Telefone");
         }
     }
 }

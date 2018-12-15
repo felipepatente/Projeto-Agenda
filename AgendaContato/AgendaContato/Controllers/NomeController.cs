@@ -36,9 +36,8 @@ namespace AgendaContato.Controllers
         public ActionResult Listar()
         {
             NomeDAO dao = new NomeDAO();
-            IList<Nome> nomes = dao.Lista();
-            ViewBag.Nomes = nomes;
-            return View();
+            IList<Nome> nomes = dao.Lista();            
+            return View(nomes);
         }
         
         public ActionResult CampoInvalido()
@@ -46,5 +45,25 @@ namespace AgendaContato.Controllers
             return View();
         }
 
+        [Route("Listar/{id}", Name="ExcluirNome")]
+        public ActionResult Excluir(int id = 0)
+        {
+            if (id != 0)
+            {
+                using (var contexto = new AgendaContext())
+                {
+                    var nomes = contexto.Nomes.Where(n => n.Id == id);
+
+                    foreach (Nome item in nomes)
+                    {
+                        contexto.Nomes.Remove(item);                        
+                    }
+
+                    contexto.SaveChanges();
+                }
+            }
+
+            return RedirectToAction("Menu", "Nome");
+        }
     }
 }
