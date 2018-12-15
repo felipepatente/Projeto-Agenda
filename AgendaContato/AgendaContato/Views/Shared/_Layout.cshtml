@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="~/Content/Css/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/Css/Site.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+               
+                <li>@Html.ActionLink("Nome", "Index", "Nome")</li>
+                <li>@Html.ActionLink("E-mail", "Index", "Email")</li>
+                <li>@Html.ActionLink("Telefone", "Index", "Telefone")</li>
+                 
+            </ul>
+            <h3 class="text-muted">Agenda de Contatos</h3>
+        </div>
+        <div id="conteudo">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
